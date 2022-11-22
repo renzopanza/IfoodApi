@@ -1,0 +1,54 @@
+﻿@model ProdutoModel
+
+@{
+    ViewData["Title"] = "Cadastrar Produto";
+    Layout = null;
+}
+
+<link rel="stylesheet" href="~/css/conta.css">
+
+
+<header>
+    <img src="~/images/logo_null_heORlH.png" alt="">
+</header>
+<div class="container">
+    <section class="box">
+        <main>
+
+            <h2>Cadastrar restaurante no <span>IFood</span> </h2>
+
+            <form asp-controller="Restaurantes" asp-action="CriarProduto" method="post" enctype="multipart/form-data" class="form">
+
+                <div class="ipn">
+                    <label for="nome"><strong>&nbsp;Nome</strong></label>
+                    <input type="text" asp-for="NomeProduto" placeholder="&nbsp;Digite seu nome">
+                </div>
+
+                <div class="ipn">
+                    <label for="preco"><strong>&nbsp;Preço</strong></label>
+                    <input type="number" asp-for="Preco" placeholder="&nbsp;Digite seu número de celular">
+                </div>
+
+                <div class="ipn">
+                    <label for="obs"><strong>&nbsp;Observação</strong></label>
+                    <input type="text" asp-for="Observacoes" placeholder="&nbsp;Ex: tirar cebola, tirar picles!">
+                </div>
+
+                <div class="ipn">
+                    <label for="imagem"><strong>&nbsp;Imagem</strong></label>
+                    <input type="file" asp-for="Imagem" placeholder="&nbsp;Digite seu endereco">
+                </div>
+
+                <input type="hidden" asp-for="IdRestaurante" />
+
+                <div class="form-btn">
+
+                    <a class="login-submit" asp-controller="Restaurantes" asp-action="Index">Voltar</a>
+
+                    <button type="submit" class="cadastro-submit">Realizar cadastro</button>
+                </div>
+            </form>
+
+        </main>
+    </section>
+</div>

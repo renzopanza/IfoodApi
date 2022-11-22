@@ -1,0 +1,65 @@
+﻿@model LoginModel;
+
+@{
+    ViewData["Title"] = "Login";
+    Layout = null;
+}
+
+
+<link rel="stylesheet" href="~/css/login.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="shortcut icon" href="~/images/logo_null_heORlH.png" />
+
+
+<body>
+    <header>
+        <img src="~/images/logo_null_heORlH.png" alt="">
+    </header>
+    <div class="container">
+        <section class="box">
+            <main>
+                @if (TempData["MensagemSucesso"] != null)
+                {
+                    <div class="alerta-sucesso" role="alert">
+                        @TempData["MensagemSucesso"]
+                    </div>
+
+                }
+
+                @if (TempData["MensagemErro"] != null)
+                {
+                    <div class="alerta" role="alert">
+                        @TempData["MensagemErro"] <span>@TempData["MensagemErroSpan"]</span>
+                    </div>
+                }
+
+                <a href="indexl.html"><img src="~/images/logo.svg" alt=""></a>
+                <h2>Falta pouco para matar sua <span>fome</span>!</h2>
+                <form class="form" asp-controller="Login" asp-action="Entrar" method="post">
+
+                    <div class="ipn">
+                        <label for="user-value">
+                            <strong>&nbsp;Usuário</strong>
+                        </label>
+                        <input id="user-value" type="text" asp-for="Login" placeholder="Digite o nome de usuário UniFood">
+
+                        <label for="pass-value">
+                            <strong>&nbsp;Senha</strong>
+                        </label>
+                        <input id="pass-value" type="password" asp-for="Senha" placeholder="Digite sua senha">
+
+                    </div>
+
+                    <div class="form-btn">
+                        <a class="create-acc-submit" asp-controller="Usuario" asp-action="Index">Criar conta</a>
+
+                        <button type="submit" class="login-submit">Iniciar seção</button>
+                    </div>
+                </form>
+
+            </main>
+        </section>
+    </div>
+</body>

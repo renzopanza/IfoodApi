@@ -1,0 +1,108 @@
+﻿@model List<RestauranteModel>;
+
+@{
+    ViewData["Title"] = "RobinFood";
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RobinFood</title>
+    <link rel="stylesheet" href="~/css/index.css" asp-append-version="true">
+    <link rel="shortcut icon" href="~/images/logo_null_heORlH.png" />
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="child">
+
+                <a asp-controller="Home" asp-action="Index"><img src="~/images/robin-food.webp" alt="Logo do site"></a>
+
+                <a asp-controller="Restaurantes" asp-action="Index">Restaurantes</a>
+
+                <a asp-controller="Login" asp-action="Index">Login</a>
+
+                <a asp-controller="Usuario" asp-action="Index" class="conta">Criar conta</a>
+
+            </div>
+        </div>
+
+    </header>
+
+    <main>
+        <div class="form">
+            <div class="search">
+                <img src="~/images/search.svg" alt="">
+                <input type="text" placeholder="Busque por item ou loja">
+            </div>
+
+            <button>Buscar</button>
+        </div>
+
+
+
+        <section class="bg">
+            <!-- <div class="left">
+                <img src="images/dish-left.png" alt="">
+                <img class="svg" src="images/left.svg" alt="">
+            </div>
+
+            <div class="right">
+                <img class="svg" src="images/right.svg" alt="">
+                <img src="images/dish-right.png" alt="">
+            </div> -->
+
+            <main class="content">
+                <h2>O delivery que devolve sua grana.</h2>
+                <h3>Nunca foi tão facíl pedir <span>Lanches</span> </h3>
+                <p>Descubra Restaurantes perto de você</p>
+                <div class="tags">
+                    <span>#Pizza</span>
+                    <span>#Lanche</span>
+                    <span>#Japa</span>
+                </div>
+            </main>
+        </section>
+
+        <div class="wrapper">
+            <div class="lojas">
+                <h1>Lojas</h1>
+                <div class="slider">
+                    <ul class="allcard">
+                        @foreach (RestauranteModel restaurante in Model)
+                        {
+                            <div class="card">
+                                <a asp-controller="Restaurantes" asp-action="GetProdutos" asp-route-id="idRestaurante-@restaurante.IdRestaurante"><img class="product" src="~/images_restaurantes/@restaurante.CaminhoImagem" alt=""></a>
+                                <!---->
+                                <h4><a asp-controller="Restaurantes" asp-action="GetProdutos" asp-route-id="idRestaurante-@restaurante.IdRestaurante">@restaurante.Nome</a></h4>
+
+                                <div class="rating">
+                                    &#9733;
+                                    &#9733;
+                                    &#9733;
+                                    &#9733;
+                                    &#9734;
+                                </div>
+                            </div>
+                        }
+
+                </div>
+            </div>
+        </div>
+
+        </div>
+
+        <footer>
+            <img src="~/images/logofooter.svg" alt="">
+            <span>©2022 Robin Food - Mais Agência Web Ltda<br />CNPJ 16.697.810/0001-89 / Rua Carlos Chagas, nº 8, São Mateus, Juiz de Fora/MG</span>
+        </footer>
+        </div>
+    </main>
+
+</body>
+</html>

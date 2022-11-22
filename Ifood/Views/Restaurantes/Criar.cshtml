@@ -1,0 +1,52 @@
+﻿@model RestauranteModel
+
+@{
+    ViewData["Title"] = "Cadastrar Restaurante";
+    Layout = null;
+}
+
+<link rel="stylesheet" href="~/css/conta.css">
+
+
+<header>
+    <img src="~/images/logo_null_heORlH.png" alt="">
+</header>
+<div class="container">
+    <section class="box">
+        <main>
+
+            <h2>Cadastrar restaurante no <span>RobinFood</span> </h2>
+
+            <form asp-controller="Restaurantes" asp-action="Criar" method="post" enctype="multipart/form-data" class="form">
+
+                <div class="ipn">
+                    <label for="nome"><strong>&nbsp;Nome</strong></label>
+                    <input type="text" asp-for="Nome" placeholder="&nbsp;Digite seu nome">
+                </div>
+
+                <div class="ipn">
+                    <label for="categoria"><strong>&nbsp;Categoria</strong></label>
+                    <input type="text" asp-for="Categoria" placeholder="&nbsp;Digite seu número de celular">
+                </div>
+
+                <div class="ipn">
+                    <label for="endereco"><strong>&nbsp;Endereco</strong></label>
+                    <input type="text" asp-for="Endereco" placeholder="&nbsp;Digite seu endereco">
+                </div>
+
+                <div class="ipn">
+                    <label for="imagem"><strong>&nbsp;Imagem</strong></label>
+                    <input type="file" asp-for="Imagem" placeholder="&nbsp;Digite seu endereco">
+                </div>
+
+                <div class="form-btn">
+
+                    <a class="login-submit" asp-controller="Restaurantes" asp-action="Index">Voltar</a>
+
+                    <button type="submit" class="cadastro-submit">Realizar cadastro</button>
+                </div>
+            </form>
+
+        </main>
+    </section>
+</div>

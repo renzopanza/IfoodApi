@@ -1,0 +1,22 @@
+﻿@model UsuarioModel;
+@{
+    ViewData["Title"] = "Pedidos";
+    Layout = null;
+}
+
+@foreach(PedidoModel pedido in Model.Pedidos){
+
+
+    <div>
+        <h5>Restaurante: @pedido.Restaurante.Nome</h5>
+        <p>
+            Nome do cliente: @pedido.Usuario.Nome<br>
+            Produto comprado: @pedido.Produto.NomeProduto<br>
+            Valor comprado: @pedido.Produto.Preco R$<br>
+            Data da compra: @pedido.DataPedido
+        </p>
+        <br>
+        <br>
+        <br>
+    </div>
+}

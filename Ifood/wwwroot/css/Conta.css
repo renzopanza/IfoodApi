@@ -1,0 +1,127 @@
+﻿body {
+    height: 100vh;
+    width: 100vw;
+    margin: 0 auto;
+    font-family: 'Raleway', Helvetica, sans-serif;
+    font-size: 16px;
+}
+
+header {
+    text-align: center;
+}
+
+    header img {
+        height: 100px;
+    }
+
+.container {
+    width: 100%;
+    height: 100%;
+    background: #d1153efc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box {
+    width: 40%;
+    height: 80%;
+    background: #f5f3f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 7px;
+}
+
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #f5f3f4;
+}
+
+    main img {
+        width: 120px;
+    }
+
+    main h2 {
+        color: #3e3e3e;
+    }
+
+        main h2 span {
+            color: #90ca4a;
+        }
+
+.form {
+    width: 100%;
+    height: 100%;
+
+    max-width: 480px;
+    background: transparent;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    transition: 0.5s;
+}
+
+    .form label {
+        color: #90ca4a;
+    }
+
+    .form input {
+        width: 100%;
+        height: 40px;
+        margin-right: 50px;
+        border-radius: 7px;
+        border: 0;
+        outline: none;
+        font-size: 1rem;
+        margin-bottom: 25px;
+    }
+
+        .form input:hover {
+            transform: scale(1.02);
+        }
+
+.form-btn {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 20px;
+    transition: 0.2s;
+    font-size: 16px;
+}
+
+    .form-btn a {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        font-weight: 500;
+    }
+
+    .form-btn .create-acc-submit {
+        width: 190px;
+        color: #90ca4a;
+        text-decoration: none;
+    }
+
+        .form-btn .create-acc-submit:hover {
+            color: #90ca4a;
+        }
+
+    .form-btn .create-acc-submit {
+        padding: 15px 45px;
+        background: #90ca4a;
+        color: #FFf;
+        border-radius: 7px;
+        text-decoration: none;
+        margin: 0 45px;
+    }
+
+        .form-btn .create-acc-submit:hover {
+            background: #679034;
+        }

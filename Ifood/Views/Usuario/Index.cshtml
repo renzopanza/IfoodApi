@@ -1,0 +1,76 @@
+﻿@model UsuarioModel;
+
+@{
+    ViewData["Title"] = "Cadastro";
+    Layout = null;
+}
+
+
+<link rel="stylesheet" href="~/css/conta.css">
+
+
+<header>
+    <img src="~/images/logo_null_heORlH.png" alt="">
+</header>
+<div class="container">
+    <section class="box">
+        <main>
+
+            @if (TempData["MensagemSucesso"] != null)
+            {
+                <div class="alerta-sucesso" role="alert">
+                    <p>@TempData["MensagemSucesso"]</p>
+                </div>
+
+            }
+
+            @if (TempData["MensagemErro"] != null)
+            {
+                <div class="alerta" role="alert">
+                    <p>@TempData["MensagemErro"]</p>
+                </div>
+
+            }
+            <h2>Crie sua conta <span>Robin Food</span>!</h2>
+            <form asp-controller="Usuario" asp-action="Cadastrar" method="post" class="form">
+
+                <div class="ipn">
+                    <label for="nome"><strong>&nbsp;Nome</strong></label>
+                    <input type="text" asp-for="Nome" placeholder="&nbsp;Digite seu nome">
+                </div>
+
+                <div class="ipn">
+                    <label for="cel"><strong>&nbsp;Celular</strong></label>
+                    <input type="tel" asp-for="Celular" placeholder="&nbsp;Digite seu número de celular">
+                </div>
+
+                <div class="ipn">
+                    <label for="endereco"><strong>&nbsp;Endereco</strong></label>
+                    <input type="text" asp-for="Endereco" placeholder="&nbsp;Digite seu endereco">
+                </div>
+
+                <div class="ipn">
+                    <label for="email"><strong>&nbsp;Email</strong></label>
+                    <input type="email" asp-for="Email" placeholder="&nbsp;Digite seu email">
+                </div>
+
+                <div>
+                    <label for="user"><strong>&nbsp;Usuário</strong></label>
+                    <input type="text" asp-for="LoginUser" placeholder="&nbsp;Digite um nome de usuário">
+                </div>
+                <div>
+                    <label for="pass"><strong>&nbsp;Senha</strong></label>
+                    <input type="password" asp-for="Password" placeholder="&nbsp;Digite uma senha">
+                </div>
+
+                <div class="form-btn">
+
+                    <a class="login-submit" asp-controller="Login" asp-action="Index">Login</a>
+
+                    <button type="submit" class="cadastro-submit">Realizar cadastro</button>
+                </div>
+            </form>
+
+        </main>
+    </section>
+</div>
